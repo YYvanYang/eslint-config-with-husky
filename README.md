@@ -30,6 +30,28 @@ Then create a file named .eslintrc.json with following contents in the root fold
 npx mrm@2 lint-staged
 ```
 
+### Custom directory
+
+Another case you may be in is if your `package.json` file and `.git` directory are not at the same level. For example, `project/.git` and `project/front/package.json`.
+
+By design, `husky install `must be run in the same directory as `.git`, but you can change directory during `prepare` script and pass a subdirectory:
+```
+// package.json
+{
+  "scripts": {
+    "prepare": "cd .. && husky install front/.husky"
+  }
+}
+```
+In your hooks, you'll also need to change directory:
+
+```
+# .husky/pre-commit
+# ...
+cd front
+npm test
+```
+
 FAQ
 
 * if it just has warning and no error with your code, it will not print out the warning message in the ternimal!
