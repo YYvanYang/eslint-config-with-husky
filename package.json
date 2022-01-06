@@ -21,6 +21,6 @@
     "lint-staged": "^12.1.5"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   }
 }
