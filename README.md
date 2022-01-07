@@ -25,7 +25,7 @@ Then create a file named .eslintrc.json with following contents in the root fold
 }
 ```
 
-4. Installation and setup lint-staged and husky
+4. Installation and setup lint-staged and husky with following command Or manual install and config husky with lint-staged by yourself
 ```
 npx mrm@2 lint-staged
 ```
